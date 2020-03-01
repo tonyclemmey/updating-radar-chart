@@ -64,8 +64,8 @@
 		          "values":[  
 		            {  "axis":"Battery Life", "value":<?php echo json_encode($data[0]['field_18']) ?> }, {  "axis":"Brand", "value":<?php echo json_encode($data[0]['field_19']) ?> },
 		            {  "axis":"Contract Cost", "value":<?php echo json_encode($data[0]['field_20']) ?> }, {  "axis":"Design And Quality", "value":<?php echo json_encode($data[0]['field_21']) ?> },
-		            {  "axis":"Have Internet Connectivity", "value":0.22 }, {  "axis":"Large Screen", "value":0.04 },
-		            {  "axis":"Price Of Device", "value":0.41 }, {  "axis":"To Be A Smartphone", "value":0.30 }
+		            {  "axis":"Have Internet Connectivity", "value":<?php echo json_encode($data[0]['field_22']) ?> }, {  "axis":"Large Screen", "value":<?php echo json_encode($data[0]['field_23']) ?> },
+		            {  "axis":"Price Of Device", "value":<?php echo json_encode($data[0]['field_24']) ?> }, {  "axis":"To Be A Smartphone", "value":<?php echo json_encode($data[0]['field_25']) ?> }
 		          ]
 		        }
 		      ];
