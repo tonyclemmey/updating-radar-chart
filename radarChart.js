@@ -37,8 +37,8 @@ function RadarChart() {
       },
 
       circles: { 
-         levels: 8, 
-         maxValue: 0, 
+         levels: 5, 
+         maxValue: 5, 
          labelFactor: 1.25, 
          opacity: 0.1, 
          fill: "#CDCDCD", 
