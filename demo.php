@@ -110,13 +110,11 @@
 
          d3.select('#radarChart')
 	           .call(radarChart);
-	     radarChart.data(data).update();
 	     radarChart.options(radarChartOptions).update();
 
 
 		 setInterval(function() {
 		     console.log('test')
-		     radarChart.data(data).update();
 		     radarChart.options(radarChartOptions).update();
 		 }, 5000); 
 
