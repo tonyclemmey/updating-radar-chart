@@ -17,7 +17,7 @@
       	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.3.0/d3-legend.js" charset="utf-8"></script>
 	
 	</head>
-	<body>
+	<body style="background:#282823; text-align: center">
 
 	<?php include 'phpmysqlconnect.php' ?>
 
@@ -42,14 +42,14 @@
 		});
 	</script>
 
-	<div id="fbi-result"></div>
+	  <div id="fbi-result"></div>
 
 	  <div id="radarChart"></div>
       <script src="radarChart.js"></script>
 
 		<script>
 			var color = d3.scale.ordinal()
-				.range(["#EDC951","#CC333F","#00A0B0"]);
+				.range(["#00dcbe","#CC333F","#00A0B0"]);
 				
 			var radarChartOptions = {
            		width: 600,
@@ -60,16 +60,26 @@
 			var data =
 			  [  
 		        {  
-		          "key":"D3",
+		          "key":"Test D3",
 		          "values":[  
-		            {  "axis":"Battery Life", "value":<?php echo json_encode($data[0]['field_18']) ?> }, 
-		            {  "axis":"Brand", "value":<?php echo json_encode($data[0]['field_19']) ?> },
-		            {  "axis":"Contract Cost", "value":<?php echo json_encode($data[0]['field_20']) ?> }, 
-		            {  "axis":"Design And Quality", "value":<?php echo json_encode($data[0]['field_21']) ?> },
-		            {  "axis":"Have Internet Connectivity", "value":<?php echo json_encode($data[0]['field_22']) ?> }, 
-		            {  "axis":"Large Screen", "value":<?php echo json_encode($data[0]['field_23']) ?> },
-		            {  "axis":"Price Of Device", "value":<?php echo json_encode($data[0]['field_24']) ?> }, 
-		            {  "axis":"To Be A Smartphone", "value":<?php echo json_encode($data[0]['field_25']) ?> }
+			        { "axis":"Personality", "value":<?php echo json_encode($data[0]['field_18']) ?>},
+					{ "axis":"Story", "value":<?php echo json_encode($data[0]['field_19']) ?>},
+					{ "axis":"Trust", "value":<?php echo json_encode($data[0]['field_20']) ?>},
+					{ "axis":"Consistency", "value":<?php echo json_encode($data[0]['field_21']) ?>},
+					{ "axis":"Seamlessness", "value":<?php echo json_encode($data[0]['field_22']) ?>},
+					{ "axis":"People", "value":<?php echo json_encode($data[0]['field_23']) ?>},
+					{ "axis":"Pleasure", "value":<?php echo json_encode($data[0]['field_24']) ?>},
+					{ "axis":"Wellbeing", "value":<?php echo json_encode($data[0]['field_25']) ?>},
+					{ "axis":"Respect", "value":<?php echo json_encode($data[0]['field_26']) ?>},
+					{ "axis":"Mission", "value":<?php echo json_encode($data[0]['field_27']) ?>},
+					{ "axis":"Inspiration", "value":<?php echo json_encode($data[0]['field_28']) ?>},
+					{ "axis":"Authenticity", "value":<?php echo json_encode($data[0]['field_29']) ?>},
+					{ "axis":"Innovation", "value":<?php echo json_encode($data[0]['field_30']) ?>},
+					{ "axis":"Thought Leadership", "value":<?php echo json_encode($data[0]['field_31']) ?>},
+					{ "axis":"Individuality", "value":<?php echo json_encode($data[0]['field_32']) ?>},
+					{ "axis":"Indispensability", "value":<?php echo json_encode($data[0]['field_33']) ?>},
+					{ "axis":"Resource Management", "value":<?php echo json_encode($data[0]['field_34']) ?>},
+					{ "axis":"Price Premium", "value":<?php echo json_encode($data[0]['field_35']) ?>}
 		          ]
 		        }
 		      ];
@@ -77,10 +87,18 @@
          radarChart = RadarChart()
 
          d3.select('#radarChart')
-           .call(radarChart);
+	           .call(radarChart);
+	     radarChart.data(data).update();
+	     radarChart.options(radarChartOptions).update();
 
-         radarChart.options(radarChartOptions).update();
 
+		 setInterval(function() {
+		     console.log('test')
+		     radarChart.data(data).update();
+		     radarChart.options(radarChartOptions).update();
+		 }, 5000); 
+
+         
 		</script>
 
       	<script src="radarDemo.js"></script>

@@ -41,16 +41,16 @@ function RadarChart() {
          maxValue: 5, 
          labelFactor: 1.25, 
          opacity: 0.1, 
-         fill: "#CDCDCD", 
-         color: "#CDCDCD"
+         fill: "#282823", 
+         color: "#444444"
       },
 
       areas: {
          colors: {},            // color lookup by key
          opacity: 0.35,
          borderWidth: 2,
-         rounded: true,
-         dotRadius: 4,
+         rounded: false,
+         dotRadius: 10,
          sort: true,          // sort layers by approximation of size, smallest on top
          filter: []
       },
@@ -58,10 +58,10 @@ function RadarChart() {
       axes: {
          display: true,
          threshold: 90,    // radius threshold for hiding
-         lineColor: "white",
-         lineWidth: "2px",
+         lineColor: "#444444",
+         lineWidth: "1px",
          fontWidth: "11px",
-         fontColor: "black",
+         fontColor: "#ffffff",
          wrapWidth: 60,	      // The number of pixels after which a label needs to be given a new line
          filter: [],
          invert: [],
