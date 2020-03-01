@@ -30,7 +30,7 @@
    //        ];
 
   setTimeout(function() { 
-      operation.text(' radarChart.data(data).duration(50).update(); ');
+      // operation.text(' radarChart.data(data).duration(50).update(); ');
       radarChart.data(data).duration(50).update();
   }, 200);
 

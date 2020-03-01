@@ -8,6 +8,9 @@
 		<!-- Jquery -->
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
+		<!-- BS4 -->
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 		<!-- Google fonts -->
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -66,7 +69,18 @@
 
 	  <div id="fbi-result"></div>
 
-	  <div id="radarChart"></div>
+
+	  <section>
+	  	<div class="container">
+	  		<div class="col-12">
+	  			
+	  			<div id="radarChart"></div>
+
+	  		</div>
+	  	</div>
+	  </section>
+
+
       <script src="radarChart.js"></script>
 
 		<script>
@@ -74,8 +88,8 @@
 				.range(["#00dcbe","#CC333F","#00A0B0"]);
 				
 			var radarChartOptions = {
-           		width: 600,
-           		height: 600,
+           		width: window.innerWidth * 0.75,
+           		height: window.innerHeight * 0.95,
 			  	color: color
 			};
 

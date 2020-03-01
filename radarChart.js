@@ -23,7 +23,7 @@ function RadarChart() {
       width: window.innerWidth,
       widthMax: window.innerWidth,
 
-	   height: window.innerHeight,
+	    height: window.innerHeight,
       heightMax: window.innerHeight,
 
       minRadius: 80,
@@ -97,7 +97,7 @@ function RadarChart() {
       'legend': { 'mouseover': legendMouseover, 'mouseout': areaMouseout, 'mouseclick': legendClick },
       'axisLegend': { 'mouseover': null, 'mouseout': null, 'mouseclick': null },
       'radarArea': { 'mouseover': areaMouseover, 'mouseout': areaMouseout, 'mouseclick': null },
-      'radarInvisibleCircle': { 'mouseover': tooltip_show, 'mouseout': tooltip_hide, 'mouseclick': null }
+      'radarInvisibleCircle': { 'mouseover': null, 'mouseout': null, 'mouseclick': null }
    };
 
    // functions which should be accessible via ACCESSORS
