@@ -243,7 +243,7 @@ function RadarChart() {
                     .attr("x", 4)
                     .attr("y", function(d) { return -d * radial_calcs.radius / options.circles.levels; })
                     .attr("dy", "0.4em")
-                    .style("font-size", "10px")
+                    .style("font-size", "0px")
                     .attr("fill", "#737373")
                     .on('mouseover', function(d, i) { if (events.axisLabel.mouseover) events.axisLabel.mouseover(d, i); })
                     .on('mouseout', function(d, i) { if (events.axisLabel.mouseout) events.axisLabel.mouseout(d, i); })
