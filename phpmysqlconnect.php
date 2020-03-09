@@ -22,6 +22,11 @@
 		$query->execute();
 		//create the array
     $data = $query->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach($data as $row) {
+      printf("{$row['field_18']} {$row['field_19']} {$row['field_20']}\n");
+    }
+
     var_dump($data);
     // print_r($data);
     // echo json_encode($data);
