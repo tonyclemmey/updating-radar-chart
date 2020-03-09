@@ -49,7 +49,7 @@
 	
 		$(document).ready(function () {
 
-				var dataset2 = '';
+				var dataset2 = [];
 
 				function fetchData() {
 
