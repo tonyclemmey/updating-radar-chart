@@ -5,6 +5,8 @@
   // https://jsonformatter.curiousconcept.com/
   // https://gist.github.com/jonsuh/3739844
   // https://doc.bccnsoft.com/docs/php-docs-7-en/pdostatement.fetchall.html
+  // http://zetcode.com/php/pdo/
+  // https://www.c-sharpcorner.com/UploadFile/9582c9/how-to-export-mysql-data-into-json-format-in-php/
   require_once 'dbconfig.php';
   $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
   $options = [
@@ -27,9 +29,9 @@
       printf("{$row['field_18']} {$row['field_19']} {$row['field_20']}\n");
     }
 
-    var_dump($data);
+    // var_dump($data);
     // print_r($data);
-    // echo json_encode($data);
+    echo json_encode($data);
 
     // echo json_encode($data = $query->fetchAll(PDO::FETCH_ASSOC));
     // $data = $row->fetch();
@@ -41,3 +43,4 @@
 	    die("Could not connect to the database $dbname :" . $pe->getMessage());
 	}
 ?>
+
