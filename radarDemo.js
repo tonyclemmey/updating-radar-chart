@@ -10,7 +10,7 @@ $(function () {
    }
 
    // interval
-   setInterval(fetchData, 5000);
+   setInterval(fetchData, 15000);
 
    var color = d3.scale.ordinal()
       .range(["#00dcbe", "#CC333F", "#00A0B0"]);
