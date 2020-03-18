@@ -46,43 +46,35 @@
 
 	<!-- Ajax start -->
 	<script>
-	
-		$(document).ready(function () {
+	$(document).ready(function () {
 
-				var dataset2 = [];
+			var dataset2 = [];
 
-				function fetchData() {
+			function fetchData() {
 
-					  $.getJSON('phpmysqlconnect.php')
+				$.getJSON('phpmysqlconnect.php')
 
-					  .done( function(data) {
+				.done( function(data) {
 
-					    dataset = data;
-						console.log(dataset);	
+				    dataset = data;
+					console.log(dataset);
+					returnData(data);
 
-						var $field18 = dataset[0].field_18;
-						var $field19 = dataset[0].field_19;
-						var $field20 = dataset[0].field_20;
-						console.log($field18);
-						console.log($field19);
-						console.log($field20);
+				})
 
-						returnData(data);
+			}
 
-					  })
+			// interval
+			setInterval(fetchData,5000);
 
-				}
+			function returnData(data){
 
-				// interval
-				setInterval(fetchData,5000);
+			    dataset2 = dataset;
+			    console.log("Return Data", dataset2);
 
-				function returnData(data){
-				    dataset2 = dataset;
-				    console.log("Return Data", dataset2);
-				};
+			};
 
-		})
-
+	})
 	</script>
 	<!-- Ajax end -->
 
