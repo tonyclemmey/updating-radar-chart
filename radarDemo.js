@@ -32,7 +32,7 @@ $(function () {
       var data =
          [
             {
-               "key": "Test D3",
+               "key": "FBI Average",
                "values": [
                   { "axis": "Personality", "value": data.field_18 },
                   { "axis": "Story", "value": data.field_19 },
