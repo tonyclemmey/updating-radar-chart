@@ -9,6 +9,7 @@
   // https://www.c-sharpcorner.com/UploadFile/9582c9/how-to-export-mysql-data-into-json-format-in-php/
   require_once 'dbconfig.php';
   $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
+  // $dsn = "mysql:host=$host;port=3307;dbname=$dbname";
   $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -25,20 +26,9 @@
 		//create the array
     $data = $query->fetchAll(PDO::FETCH_ASSOC);
 
-    foreach($data as $row) {
-      printf("{$row['field_18']} {$row['field_19']} {$row['field_20']}\n");
-    }
-
     // var_dump($data);
     // print_r($data);
-    echo json_encode($data);
-
-    // echo json_encode($data = $query->fetchAll(PDO::FETCH_ASSOC));
-    // $data = $row->fetch();
-
-    // echo data
-    // echo json_encode($data[0]['field_18']);
-
+    echo json_encode($data[0]);
 	} catch (PDOException $pe) {
 	    die("Could not connect to the database $dbname :" . $pe->getMessage());
 	}

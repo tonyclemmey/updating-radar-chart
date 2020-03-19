@@ -1,37 +1,61 @@
-!function() {
+$(function () {
+   fetchData()
 
-   var operation = d3.select('body').append('div').append('h2');
-   
-   // data = 
-   //      [  
-   //        {  
-   //          "key":"Test D3",
-   //          "values":[  
-   //                { "axis":"Personality", "value":<?php echo json_encode($data[0]['field_18']) ?>},
-   //                { "axis":"Story", "value":<?php echo json_encode($data[0]['field_19']) ?>},
-   //                { "axis":"Trust", "value":<?php echo json_encode($data[0]['field_20']) ?>},
-   //                { "axis":"Consistency", "value":<?php echo json_encode($data[0]['field_21']) ?>},
-   //                { "axis":"Seamlessness", "value":<?php echo json_encode($data[0]['field_22']) ?>},
-   //                { "axis":"People", "value":<?php echo json_encode($data[0]['field_23']) ?>},
-   //                { "axis":"Pleasure", "value":<?php echo json_encode($data[0]['field_24']) ?>},
-   //                { "axis":"Wellbeing", "value":<?php echo json_encode($data[0]['field_25']) ?>},
-   //                { "axis":"Respect", "value":<?php echo json_encode($data[0]['field_26']) ?>},
-   //                { "axis":"Mission", "value":<?php echo json_encode($data[0]['field_27']) ?>},
-   //                { "axis":"Inspiration", "value":<?php echo json_encode($data[0]['field_28']) ?>},
-   //                { "axis":"Authenticity", "value":<?php echo json_encode($data[0]['field_29']) ?>},
-   //                { "axis":"Innovation", "value":<?php echo json_encode($data[0]['field_30']) ?>},
-   //                { "axis":"Thought Leadership", "value":<?php echo json_encode($data[0]['field_31']) ?>},
-   //                { "axis":"Individuality", "value":<?php echo json_encode($data[0]['field_32']) ?>},
-   //                { "axis":"Indispensability", "value":<?php echo json_encode($data[0]['field_33']) ?>},
-   //                { "axis":"Resource Management", "value":<?php echo json_encode($data[0]['field_34']) ?>},
-   //                { "axis":"Price Premium", "value":<?php echo json_encode($data[0]['field_35']) ?>}
-   //            ]
-   //          }
-   //        ];
+   function fetchData () {
+      $.getJSON('phpmysqlconnect.php')
+         .done(function (data) {
+            // dataset = data;
+            returnData(data);
+         });
+   }
 
-  setTimeout(function() { 
-      // operation.text(' radarChart.data(data).duration(50).update(); ');
-      radarChart.data(data).duration(50).update();
-  }, 200);
+   // interval
+   setInterval(fetchData, 5000);
 
-}();
+   var color = d3.scale.ordinal()
+      .range(["#00dcbe", "#CC333F", "#00A0B0"]);
+
+   var radarChartOptions = {
+      width: window.innerWidth * 0.75,
+      height: window.innerHeight * 0.95,
+      color: color
+   };
+
+   radarChart = RadarChart();
+
+   d3.select('#radarChart').call(radarChart);
+
+   function returnData (data) {
+      // dataset2 = dataset;
+      console.log(data);
+
+      var data =
+         [
+            {
+               "key": "Test D3",
+               "values": [
+                  { "axis": "Personality", "value": data.field_18 },
+                  { "axis": "Story", "value": data.field_19 },
+                  { "axis": "Trust", "value": data.field_20 },
+                  { "axis": "Consistency", "value": data.field_21 },
+                  { "axis": "Seamlessness", "value": data.field_22 },
+                  { "axis": "People", "value": data.field_23 },
+                  { "axis": "Pleasure", "value": data.field_24 },
+                  { "axis": "Wellbeing", "value": data.field_25 },
+                  { "axis": "Respect", "value": data.field_26 },
+                  { "axis": "Mission", "value": data.field_27 },
+                  { "axis": "Inspiration", "value": data.field_28 },
+                  { "axis": "Authenticity", "value": data.field_29 },
+                  { "axis": "Innovation", "value": data.field_30 },
+                  { "axis": "Thought Leadership", "value": data.field_31 },
+                  { "axis": "Individuality", "value": data.field_32 },
+                  { "axis": "Indispensability", "value": data.field_33 },
+                  { "axis": "Resource Management", "value": data.field_34 },
+                  { "axis": "Price Premium", "value": data.field_35 }
+               ]
+            }
+         ];
+
+      radarChart.options(radarChartOptions).data(data).duration(50).update();
+   };
+});
