@@ -94,7 +94,7 @@ function RadarChart() {
       'gridCircle': { 'mouseover': null, 'mouseout': null, 'mouseclick': null },
       'axisLabel': { 'mouseover': null, 'mouseout': null, 'mouseclick': null },
       'line': { 'mouseover': null, 'mouseout': null, 'mouseclick': null },
-      'legend': { 'mouseover': legendMouseover, 'mouseout': areaMouseout, 'mouseclick': legendClick },
+      'legend': { 'mouseover': legendMouseover, 'mouseout': areaMouseout, 'mouseclick': null },
       'axisLegend': { 'mouseover': null, 'mouseout': null, 'mouseclick': null },
       'radarArea': { 'mouseover': areaMouseover, 'mouseout': areaMouseout, 'mouseclick': null },
       'radarInvisibleCircle': { 'mouseover': null, 'mouseout': null, 'mouseclick': null }
