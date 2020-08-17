@@ -70,7 +70,7 @@ function RadarChart() {
 
       legend: {
          display: false,
-         symbol: 'cross', // 'circle', 'cross', 'diamond', 'triangle-up', 'triangle-down'
+         symbol: 'circle', // 'circle', 'cross', 'diamond', 'triangle-up', 'triangle-down'
          toggle: 'circle',
          position: { x: 25, y: 25 }
       },
