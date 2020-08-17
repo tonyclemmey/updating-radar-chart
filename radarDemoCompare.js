@@ -44,7 +44,7 @@ $(function () {
             newData =
             [
                {
-                  "key": "FBI Average (Click to Hide/Show)",
+                  "key": "FBI Average",
                   "values": [
                      { "axis": "Personality", "value": data.field_18 },
                      { "axis": "Story", "value": data.field_19 },
@@ -67,7 +67,7 @@ $(function () {
                   ]
                } ,
                {
-                  "key": "Apple (Click to Hide/Show)",
+                  "key": "Apple",
                   "values": [
                      { "axis": "Personality", "value": 4 },
                      { "axis": "Story", "value": 4 },
